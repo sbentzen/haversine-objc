@@ -17,6 +17,15 @@ float const HAVERSINE_F_PER_MI = 5282.0;
 
 @synthesize lat1, lon1, lat2, lon2;
 
++ (float)distanceFromPoint:(CGPoint)firstPoint toPoint:(CGPoint)lastPoint{
+  float lat1Rad = firstPoint.y * HAVERSINE_RADS_PER_DEGREE;
+  float lat2Rad = lastPoint.y * HAVERSINE_RADS_PER_DEGREE;
+  float dLonRad = ((lastPoint.x - firstPoint.x) * HAVERSINE_RADS_PER_DEGREE);
+  float dLatRad = ((lastPoint.y - firstPoint.y) * HAVERSINE_RADS_PER_DEGREE);
+  float a = pow(sin(dLatRad / 2), 2) + cos(lat1Rad) * cos(lat2Rad) * pow(sin(dLonRad / 2), 2);
+  return (2 * atan2(sqrt(a), sqrt(1 - a))) * HAVERSINE_KM_RADIUS;
+}
+
 - (id)init {
   return [self initWithLat1:0.0 lon1:0.0 lat2:0.0 lon2:0.0];
 }

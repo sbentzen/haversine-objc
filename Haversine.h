@@ -24,6 +24,9 @@ extern float const HAVERSINE_F_PER_MI;
 @property float lat2;
 @property float lon2;
 
+
++ (float)distanceFromPoint:(CGPoint)firstPoint toPoint:(CGPoint)lastPoint;
+
 - (id)init;
 - (id)initWithLat1:(float)newLat1
               lon1:(float)newLon1
