@@ -1,0 +1,2 @@
+This class provides easy usage of the haversine algorithm.
+The haversine algorithm is used for quick measurement between to latitude and longitude coordinates
