@@ -12,6 +12,10 @@ float const HAVERSINE_KM_RADIUS = 6371.0;
 float const HAVERSINE_M_PER_KM = 1000.0;
 float const HAVERSINE_F_PER_MI = 5282.0;
 
+#define toKilometers(val) (val * HAVERSINE_KM_RADIUS)
+#define toMeters(val) (toKilometers(val) * HAVERSINE_M_PER_KM)
+#define toMiles(val) (val * HAVERSINE_MI_RADIUS)
+#define toFeet(val) (toMiles(val) * HAVERSINE_F_PER_MI)
 
 @implementation Haversine
 
